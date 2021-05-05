@@ -52,14 +52,16 @@ if __name__ == '__main__':
         sorted_list.add(random.randint(-3*length, 3*length))
     sorted_list = sorted(list(sorted_list))
 
+    target_list = [random.randint(-3*length, 3*length) for _ in range(length)]
+
     start = time.time()
-    for target in sorted_list:
+    for target in target_list:
         naive_search(sorted_list, target)
     end = time.time()
     print("Naive search time:", (end - start), "seconds")
 
     start = time.time()
-    for target in sorted_list:
+    for target in target_list:
         binary_search(sorted_list, target)
     end = time.time()
     print("Binary search time:", (end - start), "seconds")
